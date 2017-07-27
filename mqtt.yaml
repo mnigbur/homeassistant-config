@@ -1,0 +1,7 @@
+  broker: !secret IP_rpi-server
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+  username: !secret mqtt-user
+  password: !secret mqtt-pass
+  protocol: 3.1
