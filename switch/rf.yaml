@@ -5,14 +5,16 @@
       pulselength: 324
       code_on: 1049937
       code_off: 1049940
-      signal_repetitions: 15
+      signal_repetitions: 30
+      
     Wohnzimmer Couch:
       pulselength: 326
       code_on: 1053009
       code_off: 1053012
-      signal_repetitions: 15
+      signal_repetitions: 30
+      
     Switch 3:
       pulselength: 328
       code_on: 1053777
       code_off: 1053780
-      signal_repetitions: 15
+      signal_repetitions: 30
