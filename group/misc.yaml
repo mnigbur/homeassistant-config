@@ -27,6 +27,7 @@ System:
     - sensor.average_load_5m
     - sensor.average_load_15m
     - sensor.since_last_boot
+    - sensor.external_ip
 
 AutomationOverride:
   name: Automation Override
