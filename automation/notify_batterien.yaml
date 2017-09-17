@@ -1,0 +1,20 @@
+- alias: 'Notify: Leere Batterie'
+  trigger:
+    - platform: time
+      at: '19:00:00'
+  condition:
+    - condition: template
+      value_template: >-
+        {% for entity_id in states.group.batterien.attributes.entity_id if states(entity_id) | int < 2 %}
+        {%- if loop.first -%}
+        {{ true }}
+        {%- endif -%}
+        {% endfor %}
+  action:
+    - service: tts.google_say
+      data_template:
+        entity_id: media_player.speaker
+        message: "Es gibt leere Batterie in mindestens einem Gerät!"
+    - service: notify.telegram
+      data:
+        message: 'Es gibt leere Batterie in mindestens einem Gerät!'

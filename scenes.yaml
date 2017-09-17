@@ -1,0 +1,28 @@
+############
+# Arbeitszimmer #
+############
+
+- name: Arbeitszimmer Normal
+  entities:
+    light.arbeitzimmer:
+      state: on
+
+############
+# WOHNZIMMER #
+############
+
+- name: Wohnzimmer Normal
+  entities:
+    switch.wohnzimmer_stehlampe:
+      state: on
+    switch.wohnzimmer_couch:
+      state: on
+    light.wohnzimmer:
+      state: on
+      
+- name: Wohnzimmer Hintergrundlicht
+  entities:
+    switch.wohnzimmer_stehlampe:
+      state: on
+    switch.wohnzimmer_couch:
+      state: on

@@ -1,0 +1,17 @@
+- platform: darksky
+  api_key: !secret darksky_api_key
+  units: ca
+  monitored_conditions:
+    - precip_intensity
+    - precip_intensity_max
+    - temperature
+    - wind_speed
+    - cloud_cover
+    - humidity
+    - minutely_summary
+    - pressure
+    - visibility
+    - ozone
+  update_interval:
+    minutes: 3
+

@@ -1,0 +1,27 @@
+kueche:
+  name: Küche
+  view: yes
+  entities:
+    - group.kueche_lights
+    - group.kueche_switches
+    - group.kueche_motion
+    - group.kueche_env
+
+kueche_lights:
+  name: Licht
+  entities:
+    - light.kueche
+    - light.kuechenschrank
+kueche_switches:
+  name: Schalter
+  entities:
+kueche_motion:
+  name: Bewegung
+  entities:
+    - sensor.bewegungsmelder_kueche
+kueche_env:
+  name: Environment
+  entities:
+    - climate.leq0845978
+    - sensor.leq0845978_valve
+    - sensor.leq0845978_battery

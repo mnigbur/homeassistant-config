@@ -1,0 +1,8 @@
+- platform: template
+  sensors:
+    daemmerung:
+      friendly_name: Dämmerung
+      device_class: light
+      value_template: '{{ states.sun.sun.attributes.elevation < 4.0 and states.sun.sun.attributes.elevation > -20 }}'
+      entity_id:
+        - sun.sun

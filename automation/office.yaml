@@ -1,0 +1,10 @@
+- alias: Office Licht
+  trigger:
+    platform: state
+    entity_id: device_tracker.pc_mni
+    to: 'not_home'
+    
+  action:
+    - service: light.turn_off
+      entity_id: light.arbeitszimmer       
+    

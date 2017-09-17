@@ -1,0 +1,10 @@
+alias: Hintergrundbeleuchtung Auto-Off
+trigger:
+  platform: state
+  entity_id: switch.wohnzimmer_stehlampe
+  to: 'on'
+  for:
+    hours: '6'
+action:
+  service: homeassistant.turn_off
+  entity_id: switch.wohnzimmer_stehlampe

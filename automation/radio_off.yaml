@@ -1,0 +1,16 @@
+alias: STOP Streaming Radio on CHROMECAST
+trigger:
+- platform: state
+  entity_id: input_select.radio_station
+  to: "None"
+action:
+- service: media_player.turn_off
+  data_template:
+    entity_id: >
+      {% if is_state("input_select.radio_player", "Schlafzimmer") %}
+        media_player.schlafzimmer
+      {% elif is_state("input_select.radio_player", "Wohnzimmer") %}
+        media_player.wohnzimmer
+      {% else %}
+          "None"
+      {% endif %}

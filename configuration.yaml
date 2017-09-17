@@ -1,10 +1,12 @@
 homeassistant:
   name: Home
-  latitude: !secret lat
-  longitude: !secret long
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
   elevation: 0
   unit_system: metric
   time_zone: Europe/Berlin
+  customize: !include customize.yaml
+   
 
 # Show links to resources in log and frontend
 #introduction:
@@ -33,40 +35,110 @@ conversation:
 # Enables support for tracking state changes over time.
 history:
 
+recorder:
+  db_url: mysql://homeassistant:asdf#1234@127.0.0.1/homeassistant
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+    entities:
+      - sun.sun
+      - sensor.last_boot
+      - sensor.pws_weather
+      - sensor.pws_weather_1d_metric
+      - sensor.pws_weather_1h
+      - sensor.pws_weather_1h_metric
+
 # View all events in a logbook
 logbook:
+
+# logger:
+  # default: info
+  # logs:
+    # homeassistant.components.telegram_bot: debug
 
 # Track the sun
 sun:
 
 
-group: !include groups.yaml
-automation: !include automations.yaml
-sensor: !include sensors.yaml
-switch: !include switches.yaml
+
+#automation: !include_dir_list automations/
+automation: !include_dir_merge_list automation/
+binary_sensor: !include_dir_merge_list binary_sensor/
+camera: !include_dir_merge_list camera/
+group: !include_dir_merge_named group/
+input_boolean: !include input_boolean.yaml
+input_select: !include input_select.yaml
+input_slider: !include input_slider.yaml
 light: !include lights.yaml
 mqtt: !include mqtt.yaml
+scene: !include scenes.yaml
+script: !include_dir_merge_named scripts/
+sensor: !include_dir_merge_list sensor/
+switch: !include_dir_merge_list switch/
+zone: !include_dir_list zones/
 
 # Text to speech
 tts:
   - platform: google
+    language: 'de'
     cache: true
-    cache_dir: /home/homeassistant/.homeassistant/tts
+    cache_dir: /tmp/tts
     time_memory: 300
-
-pilight:
-  host: 127.0.0.1
-  port: 5000
+  - platform: picotts
+    language: 'de-DE'
 
 media_player:
   - platform: cast
     host: !secret IP_chromcast
   - platform: firetv
+  - platform: samsungtv
+    name: TV Wohnzimmer
+    host: 192.168.178.22
+    mac: F4:7B:5E:A5:8A:39
+  - platform: vlc
+    name: speaker
+    arguments: '--alsa-audio-device=hw:0,0'
   
-emulated_hue:
-  host_ip: !secret IP_rpi-server
-  expose_by_default: false
-  listen_port: 80
-  
-
-
+homematic:
+  hosts:
+    rf:
+      ip: 127.0.0.1
+      
+device_tracker:
+  - platform: owntracks
+    max_gps_accuracy: 200
+    waypoints: True
+    waypoint_whitelist:
+      - mni
+      - khi
+    qos: 0
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.batt }}'
+  - platform: fritz
+    track_new_devices: false
+    consider_home: 120
+  - platform: nmap_tracker
+    hosts: 192.168.178.0/24
+    home_interval: 3
+    track_new_devices: false
+    interval_seconds: 30
+    consider_home: 120
+      
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_api_key
+    allowed_chat_ids:
+      - !secret telegram_chat_id
+      
+notify:
+  - name: telegram
+    platform: telegram
+    chat_id: !secret telegram_chat_id
+    
+# notify:
+  # - name: browser
+    # platform: html5
+    # gcm_api_key: !secret gcm_api_key
+    # gcm_sender_id: !secret gcm_sender_id

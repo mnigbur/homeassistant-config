@@ -1,0 +1,28 @@
+wohnzimmer:
+  name: Wohnzimmer
+  view: yes
+  entities:
+    - group.wohnzimmer_lights
+    - group.wohnzimmer_switches
+    - group.wohnzimmer_motion
+    - group.wohnzimmer_env
+
+wohnzimmer_lights:
+  name: Licht
+  entities:
+    - light.wohnzimmer
+wohnzimmer_switches:
+  name: Schalter
+  entities:
+    - switch.wohnzimmer_stehlampe
+    - switch.wohnzimmer_couch
+wohnzimmer_motion:
+  name: Bewegung
+  entities:
+    - sensor.bewegungsmelder_wohnzimmer
+wohnzimmer_env:
+  name: Environment
+  entities:
+    - climate.leq0846316
+    - sensor.leq0846316_valve
+    - sensor.leq0846316_battery

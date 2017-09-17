@@ -1,0 +1,10 @@
+hide_entity: True 
+trigger:
+  platform: mqtt
+  topic: "tele/sonoff-kuechenschrank/LWT"
+  payload: "Offline"
+action:
+   service: mqtt.publish
+   data:
+       topic : "stat/sonoff-kuechenschrank/POWER"
+       payload : "OFF"

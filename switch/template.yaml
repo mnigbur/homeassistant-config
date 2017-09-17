@@ -1,0 +1,11 @@
+- platform: template
+  switches:
+    officepctemplate:
+      friendly_name: Office PC
+      value_template: "{{ is_state('device_tracker.htpc', 'home') }}"
+      turn_on:
+        service: script.turn_on
+        entity_id: script.start_office
+      turn_off:
+        service: script.turn_on
+        entity_id: script.stop_office

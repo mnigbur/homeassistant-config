@@ -5,3 +5,13 @@
   username: !secret mqtt-user
   password: !secret mqtt-pass
   protocol: 3.1
+  # birth_message:
+    # topic: 'hass/status'
+    # payload: 'online'
+    # qos: 1
+    # retain: true
+  # will_message:
+    # topic: 'hass/status'
+    # payload: 'offline'
+    # qos: 1
+    # retain: true

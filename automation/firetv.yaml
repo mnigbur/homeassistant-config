@@ -1,0 +1,44 @@
+- alias: "Fire TV pause"
+  trigger:
+    platform: state
+    entity_id: media_player.amazon_fire_tv
+    to: 'standby'
+    from: 'playing'
+    
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.wohnzimmer_stehlampe
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 5
+        
+  action:
+    service: light.turn_on
+    entity_id: light.wohnzimmer
+
+    
+    
+- alias: "Fire TV playing"
+  trigger:
+    platform: state
+    entity_id: media_player.amazon_fire_tv
+    to: 'playing'
+
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.wohnzimmer_stehlampe
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: '{{ state.attributes.elevation }}'
+        below: 5
+
+  action:
+    service: light.turn_off
+    entity_id: light.wohnzimmer

@@ -1,0 +1,4 @@
+  - platform: wake_on_lan
+    name: "Office PC WoL"
+    mac_address: !secret MAC_office_pc
+    host: !secret IP_office_pc

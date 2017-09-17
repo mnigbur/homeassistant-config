@@ -1,0 +1,15 @@
+- platform: google_travel_time
+  name: Arbeitsweg Markus
+  api_key: !secret gtt_api_key
+  origin: device_tracker.handy_mni
+  destination: zone.work_mni
+  options:
+    arrival_time: 09:00:00
+  
+- platform: google_travel_time
+  name: Arbeitsweg Kirstin
+  api_key: !secret gtt_api_key
+  origin: device_tracker.handy_khi
+  destination: zone.work_khi
+  options:
+    arrival_time: 08:00:00

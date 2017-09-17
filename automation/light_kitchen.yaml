@@ -1,0 +1,42 @@
+- alias: "Licht Küche aus"
+  trigger:
+    platform: state
+    entity_id: sensor.bewegungsmelder_kueche
+    to: 'No Motion'
+    for:
+      minutes: 1
+  action:
+    service: light.turn_off
+    entity_id: light.kuechenschrank
+
+- alias: "Licht Küche an"
+  trigger:
+    platform: state
+    entity_id: sensor.bewegungsmelder_kueche
+    to: 'Motion'
+  
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: binary_sensor.anwesenheit
+        state: 'home'
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: binary_sensor.daemmerung
+            state: 'on'
+          - condition: state
+            entity_id: binary_sensor.mistwetter
+            state: 'on'
+          - condition: numeric_state
+            entity_id: sun.sun
+            value_template: '{{ state.attributes.elevation }}'
+            below: 5
+  
+  action:
+    - service: light.turn_on
+      entity_id: light.kuechenschrank
+    - service: notify.telegram
+      data:
+        message: 'Bewegung Küche'

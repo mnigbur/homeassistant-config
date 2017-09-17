@@ -1,0 +1,28 @@
+alias: START Streaming Radio on CHROMECAST
+trigger:
+- platform: state
+  entity_id: input_select.radio_station
+action:
+- service: media_player.play_media
+  data_template:
+    entity_id: >
+      {% if is_state("input_select.radio_player", "Schlafzimmer") %}
+        media_player.schlafzimmer
+      {% elif is_state("input_select.radio_player", "Wohnzimmer") %}
+        media_player.wohnzimmer
+      {% else %}
+        "None"
+      {% endif %}
+    media_content_id: >
+      {% if is_state("input_select.radio_station", "Bassdrive") %}
+        http://bassdrive.com/bassdrive3.m3u
+      {%-elif is_state("input_select.radio_station", "Beatblender") %}
+        http://somafm.com/beatblender130.pls
+      {%-elif is_state("input_select.radio_station", "Groove Salad") %}
+        http://somafm.com/groovesalad130.pls
+      {%-elif is_state("input_select.radio_station", "1 Live") %}
+        https://1liveuni-lh.akamaihd.net/i/1LIVE_HDS@179577/master.m3u8
+      {% else %}
+        "None"
+      {% endif %}
+    media_content_type: 'audio/mp4'

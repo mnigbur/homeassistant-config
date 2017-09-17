@@ -1,1 +1,1 @@
-{"3": "group.all_lights", "1": "light.wohnzimmer_licht", "2": "media_player.chromecast"}
+{"4": "light.arbeitszimmer_licht", "8": "switch.wohnzimmer_couch", "7": "light.kuche_licht", "3": "group.all_lights", "5": "switch.switch_3", "6": "switch.wohnzimmer_stehlampe", "1": "light.wohnzimmer_licht", "10": "script.restart_ha", "11": "light.schlafzimmer_licht", "2": "media_player.chromecast", "12": "script.shutdown", "9": "script.tts_morning_info"}

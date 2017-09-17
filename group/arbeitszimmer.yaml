@@ -1,0 +1,35 @@
+arbeitszimmer:
+  name: Arbeitszimmer
+  view: yes
+  entities:
+    - group.arbeitszimmer_lights
+    - group.arbeitszimmer_switches
+    - group.arbeitszimmer_pc
+    - group.arbeitszimmer_motion
+    - group.arbeitszimmer_env
+
+arbeitszimmer_lights:
+  name: Licht
+  entities:
+    - light.arbeitszimmer
+arbeitszimmer_switches:
+  name: Schalter
+  entities:
+    - switch.switch_3
+    - switch.office_pc_wol
+arbeitszimmer_pc:
+  name: Office PC
+  entities:
+    - sensor.officepc
+    - sensor.officepctemplate
+    - switch.officepc
+arbeitszimmer_motion:
+  name: Bewegung
+  entities:
+    - sensor.arbeitszimmer_motion
+arbeitszimmer_env:
+  name: Environment
+  entities:
+    - climate.leq0846600
+    - sensor.leq0846600_valve
+    - sensor.leq0846600_battery

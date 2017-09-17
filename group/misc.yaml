@@ -1,0 +1,45 @@
+speedtest:
+  name: Speedtest
+  entities:
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    
+radio:
+  name: Radio
+  entities:
+    - input_select.radio_player
+    - input_select.radio_station
+    - input_slider.google_volume
+    
+System:
+  name: System
+  entities:
+    - sensor.cpu_use
+    - sensor.disk_use_
+    - sensor.ram_free
+    - sensor.received_wlan0
+    - sensor.sent_wlan0
+    - sensor.received_eth0
+    - sensor.sent_eth0
+    - sensor.last_boot
+    - sensor.average_load_1m
+    - sensor.average_load_5m
+    - sensor.average_load_15m
+    - sensor.since_last_boot
+
+AutomationOverride:
+  name: Automation Override
+  entities:
+    - input_boolean.disable_interior_lights_sunset
+    
+geraete:
+  name: Geräte
+  entities:
+    - device_tracker.handy_mni
+    - device_tracker.handy_khi
+    - device_tracker.tv_wohnzimmer
+    - device_tracker.firetv
+    - device_tracker.chromecast
+    - device_tracker.pc_mni
+    - device_tracker.pc_khi

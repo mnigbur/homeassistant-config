@@ -1,0 +1,19 @@
+radio_station:
+  name: Radio Station
+  options:
+    - 1 Live
+    - Bassdrive
+    - Beatblender
+    - Groove Salad
+    - "None"
+  initial: "None"
+  icon: mdi:radio
+  
+radio_player:
+  name: Radio Player
+  options:
+    - Schlafzimmer
+    - Wohnzimmer
+    - "None"
+  initial: "None"
+  icon: mdi:cast

@@ -1,0 +1,19 @@
+alias: Radio Lautstärke
+trigger:
+- platform: state
+  entity_id: input_slider.google_volume
+condition:
+- condition: template
+  value_template: "{{ states.input_select.radio_player.state != 'OFF' }}"
+action:
+- service: media_player.volume_set
+  data_template:
+    entity_id: >
+      {% if is_state("input_select.radio_player", "Schlafzimmer") %}
+        media_player.schlafzimmer
+      {% elif is_state("input_select.radio_player", "Wohnzimmer") %}
+        media_player.wohnzimmer
+      {% else %}
+        "None"
+      {% endif %}
+    volume_level: "{{ states.input_slider.google_volume.state | float / 10 }}"

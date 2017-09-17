@@ -1,0 +1,53 @@
+- platform: template
+  sensors:
+  # Sun elevation
+    solar_angle:
+      value_template: '{{ states.sun.sun.attributes.elevation }}'
+      friendly_name: 'Solar angle'
+      unit_of_measurement: 'degrees'
+      
+    firetv:
+      friendly_name: 'firetv'
+      value_template: "{{ 'Online' if is_state('device_tracker.firetv', 'home') else 'Offline' }}"
+    officespc:
+      friendly_name: 'Office PC Status'
+      value_template: "{{ 'Online' if is_state('device_tracker.htpc', 'home') else 'Offline' }}"
+      
+    iss_people_onboard:
+      value_template: '{{ states.binary_sensor.iss.attributes.number_of_people_in_space}}'
+      friendly_name: 'People In Space'
+    iss_lat:
+      value_template: '{{ states.binary_sensor.iss.attributes.lat}}'
+      friendly_name: 'ISS Lat'
+    iss_lon:
+      value_template: '{{ states.binary_sensor.iss.attributes.long}}'
+      friendly_name: 'ISS Lon'
+    iss_rise:
+      value_template: '{{ states.binary_sensor.iss.attributes.next_rise}}'
+      friendly_name: 'ISS Aos'
+
+### Heizungsthermostate ###
+    leq0845978_valve:
+      friendly_name: 'Ventil'
+      value_template: '{{ states.climate.leq0845978.attributes.valve }}'
+      entity_id: climate.leq0845978
+    leq0845978_battery:
+      friendly_name: 'Batterie'
+      value_template: '{{ states.climate.leq0845978.attributes.battery }}'
+      entity_id: climate.leq0845978
+    leq0846316_valve:
+      friendly_name: 'Ventil'
+      value_template: '{{ states.climate.leq0846316.attributes.valve }}'
+      entity_id: climate.leq0846316
+    leq0846316_battery:
+      friendly_name: 'Batterie'
+      value_template: '{{ states.climate.leq0846316.attributes.battery }}'
+      entity_id: climate.leq0846316
+    leq0846600_valve:
+      friendly_name: 'Ventil'
+      value_template: '{{ states.climate.leq0846600.attributes.valve }}'
+      entity_id: climate.leq0846600
+    leq0846600_battery:
+      friendly_name: 'Batterie'
+      value_template: '{{ states.climate.leq0846600.attributes.battery }}'
+      entity_id: climate.leq0846600
