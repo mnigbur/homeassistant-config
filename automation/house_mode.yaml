@@ -1,0 +1,39 @@
+# - alias: Haus Modus Automation Morgen
+  # trigger:
+    # platform: time
+    # at: '06:00:00'
+  # action:
+    # - service: input_select.select_option
+      # data:
+        # entity_id: input_select.house_mode
+        # option: Morgen
+        
+# - alias: Haus Modus Automation Tag
+  # trigger:
+    # platform: time
+    # at: '12:00:00'
+  # action:
+    # - service: input_select.select_option
+      # data:
+        # entity_id: input_select.house_mode
+        # option: Tag
+        
+# - alias: Haus Modus Automation Abend
+  # trigger:
+    # platform: time
+    # at: '17:30:00'
+  # action:
+    # - service: input_select.select_option
+      # data:
+        # entity_id: input_select.house_mode
+        # option: Abend
+        
+# - alias: Haus Modus Automation Nacht
+  # trigger:
+    # platform: time
+    # at: '23:00:00'
+  # action:
+    # - service: input_select.select_option
+      # data:
+        # entity_id: input_select.house_mode
+        # option: Nacht

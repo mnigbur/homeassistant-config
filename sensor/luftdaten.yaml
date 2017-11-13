@@ -1,0 +1,5 @@
+- platform: luftdaten
+  sensorid: 6749
+  monitored_conditions:
+    - P1
+    - P2

@@ -1,0 +1,23 @@
+- platform: mqtt
+  name: Bewegungsmelder Kueche
+  state_topic: "stat/esp-kueche/PIR"
+  qos: 0
+  payload_on: "1"
+  payload_off: "0"
+  device_class: motion
+  
+- platform: mqtt
+  name: Bewegungsmelder Balkon
+  state_topic: "stat/esp-balkon/PIR"
+  qos: 0
+  payload_on: "1"
+  payload_off: "0"
+  device_class: motion
+  
+- platform: mqtt
+  name: Bewegungsmelder Wohnzimmer
+  state_topic: "stat/esp-wohnzimmer/PIR"
+  qos: 0
+  payload_on: "1"
+  payload_off: "0"
+  device_class: motion

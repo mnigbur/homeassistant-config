@@ -1,0 +1,4 @@
+- name: Abend
+  entities:
+    switch.wohnzimmer_stehlampe: on
+    switch.wohnzimmer_vitrine: on

@@ -1,0 +1,11 @@
+- name: Balkon Idle
+  entities:
+    light.balkon:
+      state: on
+      brightness: 1
+    
+- name: Balkon Aktiv
+  entities:
+    light.balkon: 
+      state: on
+      brightness: 200
