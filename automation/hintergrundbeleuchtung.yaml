@@ -1,76 +1,76 @@
-- alias: Hintergrundbeleuchtung
-  trigger:
-    - platform: state
-      entity_id: binary_sensor.daemmerung
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.mistwetter
-      to: 'on'
-    - platform: state
-      entity_id: binary_sensor.anwesenheit
-      to: 'home'
+# - alias: Hintergrundbeleuchtung
+  # trigger:
+    # - platform: state
+      # entity_id: binary_sensor.daemmerung
+      # to: 'on'
+    # - platform: state
+      # entity_id: binary_sensor.mistwetter
+      # to: 'on'
+    # - platform: state
+      # entity_id: binary_sensor.anwesenheit
+      # to: 'on'
     
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: binary_sensor.anwesenheit
-        state: 'home'
-      - condition: or
-        conditions:
-          - condition: state
-            entity_id: binary_sensor.daemmerung
-            state: 'on'
-          - condition: state
-            entity_id: binary_sensor.mistwetter
-            state: 'on'
+  # condition:
+    # condition: and
+    # conditions:
+      # - condition: state
+        # entity_id: binary_sensor.anwesenheit
+        # state: 'on'
+      # - condition: or
+        # conditions:
+          # - condition: state
+            # entity_id: binary_sensor.daemmerung
+            # state: 'on'
+          # - condition: state
+            # entity_id: binary_sensor.mistwetter
+            # state: 'on'
           
-  action:
-    - service: tts.google_say
-      data_template:
-        entity_id: media_player.speaker
-        message: "Es wird ein wenig dunkel, ich schalte zusätzliches Licht im Wohnzimmer ein."
-    - delay: 0:00:06
-    - service: scene.turn_on
-      entity_id: scene.wohnzimmer_hintergrundlicht
-    - service: notify.telegram
-      data:
-        message: "Es wird ein wenig dunkel, ich schalte zusätzliches Licht im Wohnzimmer ein."
+  # action:
+    # - service: tts.google_say
+      # data_template:
+        # entity_id: media_player.speaker
+        # message: "Es wird ein wenig dunkel, ich schalte zusätzliches Licht im Wohnzimmer ein."
+    # - delay: 0:00:06
+    # - service: scene.turn_on
+      # entity_id: scene.wohnzimmer_hintergrundlicht
+    # - service: notify.telegram
+      # data:
+        # message: "Es wird ein wenig dunkel, ich schalte zusätzliches Licht im Wohnzimmer ein."
 
         
         
-- alias: Hintergrundbeleuchtung aus
-  trigger:
-    - platform: state
-      entity_id: device_tracker.tv_wohnzimmer
-      to: 'not_home'
-    - platform: state
-      entity_id: binary_sensor.daemmerung
-      to: 'off'
-    - platform: state
-      entity_id: binary_sensor.mistwetter
-      to: 'off'
+# - alias: Hintergrundbeleuchtung aus
+  # trigger:
+    # - platform: state
+      # entity_id: device_tracker.tv_wohnzimmer
+      # to: 'not_home'
+    # - platform: state
+      # entity_id: binary_sensor.daemmerung
+      # to: 'off'
+    # - platform: state
+      # entity_id: binary_sensor.mistwetter
+      # to: 'off'
       
-  condition:
-    condition: or
-    conditions:
-      - condition: state
-        entity_id: binary_sensor.anwesenheit
-        state: 'not_home'
-      - condition: and
-        conditions:
-          - condition: state
-            entity_id: binary_sensor.daemmerung
-            state: 'off'
-          - condition: state
-            entity_id: binary_sensor.mistwetter
-            state: 'off'
+  # condition:
+    # condition: or
+    # conditions:
+      # - condition: state
+        # entity_id: binary_sensor.anwesenheit
+        # state: 'not_home'
+      # - condition: and
+        # conditions:
+          # - condition: state
+            # entity_id: binary_sensor.daemmerung
+            # state: 'off'
+          # - condition: state
+            # entity_id: binary_sensor.mistwetter
+            # state: 'off'
             
-  action:
-    - service: light.turn_off
-      entity_id: switch.wohnzimmer_stehlampe
-    - service: light.turn_off
-      entity_id: switch.wohnzimmer_couch
+  # action:
+    # - service: light.turn_off
+      # entity_id: switch.wohnzimmer_stehlampe
+    # - service: light.turn_off
+      # entity_id: switch.wohnzimmer_couch
       
       
 - alias: Hintergrundbeleuchtung TV an, Haupt Licht aus

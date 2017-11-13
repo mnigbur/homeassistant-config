@@ -7,3 +7,14 @@ guest_mode:
   name: Gast Modus
   initial: off
   icon: mdi:account-multiple
+
+speech_notifications:
+  name: Sprachausgabe
+  initial: on
+  icon: mdi:speaker-wireless
+  
+heating_auto:
+  name: Heizung automatisch
+  initial: on
+
+ 

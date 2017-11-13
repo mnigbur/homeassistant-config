@@ -13,6 +13,7 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+  themes: !include_dir_merge_named themes/
 
 # Enables configuration UI
 config:
@@ -22,6 +23,8 @@ http:
   # api_password: PASSWORD
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
+  #ssl_certificate: /home/homeassistant/.homeassistant/certificate.pem
+  #ssl_key: /home/homeassistant/.homeassistant/privkey.pem
 
 updater:
   include_used_components: true
@@ -36,7 +39,7 @@ conversation:
 history:
 
 recorder:
-  db_url: mysql://homeassistant:asdf#1234@127.0.0.1/homeassistant
+  db_url: !secret mysql_connection
   exclude:
     domains:
       - automation
@@ -61,7 +64,7 @@ logbook:
 # Track the sun
 sun:
 
-
+map:
 
 #automation: !include_dir_list automations/
 automation: !include_dir_merge_list automation/
@@ -70,10 +73,10 @@ camera: !include_dir_merge_list camera/
 group: !include_dir_merge_named group/
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
-input_slider: !include input_slider.yaml
+#input_slider: !include input_slider.yaml
 light: !include lights.yaml
 mqtt: !include mqtt.yaml
-scene: !include scenes.yaml
+scene: !include_dir_merge_list scenes/
 script: !include_dir_merge_named scripts/
 sensor: !include_dir_merge_list sensor/
 switch: !include_dir_merge_list switch/
@@ -117,12 +120,12 @@ device_tracker:
     unit_of_measurement: "%"
     value_template: '{{ value_json.batt }}'
   - platform: fritz
-    track_new_devices: false
+    track_new_devices: no
     consider_home: 120
   - platform: nmap_tracker
     hosts: 192.168.178.0/24
     home_interval: 3
-    track_new_devices: false
+    track_new_devices: no
     interval_seconds: 30
     consider_home: 120
       
@@ -142,3 +145,13 @@ notify:
     # platform: html5
     # gcm_api_key: !secret gcm_api_key
     # gcm_sender_id: !secret gcm_sender_id
+    
+emulated_hue:
+  type: alexa
+  off_maps_to_on_domains:
+    - script
+    - scene
+  expose_by_default: true
+  exposed_domains:
+    - light
+    - switch

@@ -4,7 +4,6 @@ kueche:
   entities:
     - group.kueche_lights
     - group.kueche_switches
-    - group.kueche_motion
     - group.kueche_env
 
 kueche_lights:
@@ -12,16 +11,15 @@ kueche_lights:
   entities:
     - light.kueche
     - light.kuechenschrank
+
 kueche_switches:
   name: Schalter
   entities:
-kueche_motion:
-  name: Bewegung
-  entities:
-    - sensor.bewegungsmelder_kueche
+  
 kueche_env:
   name: Environment
   entities:
+    - binary_sensor.bewegungsmelder_kueche
     - climate.leq0845978
     - sensor.leq0845978_valve
     - sensor.leq0845978_battery

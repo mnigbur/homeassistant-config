@@ -17,3 +17,12 @@ radio_player:
     - "None"
   initial: "None"
   icon: mdi:cast
+  
+house_mode:
+  name: Haus Modus
+  options:
+    - Morgen
+    - Tag
+    - Abend
+    - Nacht
+  

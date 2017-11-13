@@ -4,19 +4,24 @@ balkon:
   entities:
     - group.balkon_lights
     - group.balkon_switches
-    - group.balkon_motion
     - group.balkon_env
+    - group.balkon_scenes
 
 balkon_lights:
   name: Licht
   entities:
     - light.balkon
+    
 balkon_switches:
   name: Schalter
-balkon_motion:
-  name: Bewegung
-  entities:
-    - sensor.bewegungsmelder_balkon
+  
 balkon_env:
   name: Environment
   entities:
+    - binary_sensor.bewegungsmelder_balkon
+    
+balkon_scenes:
+  name: Szenen
+  entities:
+    - scene.balkon_idle
+    - scene.balkon_aktiv
