@@ -5,8 +5,8 @@
 # Planned things
 
 # Random stuff to remember
-View HASS realtime logs `sudo journalctl -f -u home-assistant`
-View mosquitto realtime messages `mosquitto_sub -u {user} -P {password} -v -t '#'`
+* View HASS realtime logs `sudo journalctl -f -u home-assistant`
+* View mosquitto realtime messages `mosquitto_sub -u {user} -P {password} -v -t '#'`
 
 # Restore from git
 ```
