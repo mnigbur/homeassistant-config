@@ -30,7 +30,7 @@ updater:
   include_used_components: true
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -119,9 +119,6 @@ device_tracker:
     qos: 0
     unit_of_measurement: "%"
     value_template: '{{ value_json.batt }}'
-  - platform: fritz
-    track_new_devices: no
-    consider_home: 120
   - platform: nmap_tracker
     hosts: 192.168.178.0/24
     home_interval: 3
