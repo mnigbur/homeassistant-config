@@ -28,6 +28,7 @@ System:
     - sensor.average_load_15m
     - sensor.since_last_boot
     - sensor.external_ip
+    - sensor.10000802dc1448_temperature
 
 AutomationOverride:
   name: Automation Override
@@ -37,10 +38,23 @@ AutomationOverride:
 geraete:
   name: Geräte
   entities:
-    - device_tracker.handy_mni
-    - device_tracker.handy_khi
+    - device_tracker.mni_mni
+    - device_tracker.khi_khi
     - device_tracker.tv_wohnzimmer
     - device_tracker.firetv
     - device_tracker.chromecast
     - device_tracker.pc_mni
     - device_tracker.pc_khi
+
+pihole:
+  name: PiHole
+  entities:
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_percentage_blocked_today
+    - sensor.pihole_dns_queries_cached
+    - sensor.pihole_dns_queries_forwarded
+    - sensor.pihole_dns_queries_today
+    - sensor.pihole_dns_unique_clients
+    - sensor.pihole_dns_unique_domains
+    - sensor.pihole_domains_blocked
+  

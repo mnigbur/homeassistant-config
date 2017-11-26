@@ -14,6 +14,7 @@ homeassistant:
 # Enables the frontend
 frontend:
   themes: !include_dir_merge_named themes/
+  javascript_version: latest
 
 # Enables configuration UI
 config:
@@ -98,7 +99,7 @@ media_player:
   - platform: firetv
   - platform: samsungtv
     name: TV Wohnzimmer
-    host: 192.168.178.22
+    host: !secret IP_firetv
     mac: F4:7B:5E:A5:8A:39
   - platform: vlc
     name: speaker
@@ -143,15 +144,15 @@ notify:
     # gcm_api_key: !secret gcm_api_key
     # gcm_sender_id: !secret gcm_sender_id
     
-# emulated_hue:
-  # type: alexa
-  # off_maps_to_on_domains:
-    # - script
-    # - scene
-  # expose_by_default: true
-  # exposed_domains:
-    # - light
-    # - switch
+emulated_hue:
+  host_ip: !secret IP_IP_rpi-server
+  off_maps_to_on_domains:
+    - script
+    - scene
+  expose_by_default: true
+  exposed_domains:
+    - light
+    - switch
     
 calendar:
   - platform: todoist

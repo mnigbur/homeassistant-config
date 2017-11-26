@@ -9,9 +9,6 @@
     firetv:
       friendly_name: 'firetv'
       value_template: "{{ 'Online' if is_state('device_tracker.firetv', 'home') else 'Offline' }}"
-    officespc:
-      friendly_name: 'Office PC Status'
-      value_template: "{{ 'Online' if is_state('device_tracker.htpc', 'home') else 'Offline' }}"
       
     iss_people_onboard:
       value_template: '{{ states.binary_sensor.iss.attributes.number_of_people_in_space}}'

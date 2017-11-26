@@ -16,7 +16,6 @@ arbeitszimmer_switches:
   name: Schalter
   entities:
     - switch.switch_3
-    - switch.office_pc_wol
 
 arbeitszimmer_env:
   name: Environment
@@ -26,10 +25,3 @@ arbeitszimmer_env:
     - sensor.leq0846600_valve
     - sensor.leq0846600_battery
     
-arbeitszimmer_pc:
-  name: Office PC
-  entities:
-    - sensor.officepc
-    - sensor.officepctemplate
-    - switch.officepc
-

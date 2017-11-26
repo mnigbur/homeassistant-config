@@ -8,13 +8,17 @@ guest_mode:
   initial: off
   icon: mdi:account-multiple
 
-speech_notifications:
+enalbe_speech_notifications:
   name: Sprachausgabe
   initial: on
   icon: mdi:speaker-wireless
-  
+
 heating_auto:
   name: Heizung automatisch
+  initial: on
+
+enable_motion_detection:
+  name: Bewegungsmelder aktiv
   initial: on
 
  

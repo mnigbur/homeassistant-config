@@ -4,6 +4,7 @@ wetter:
   entities:
     - group.forecast
     - group.space
+    - group.airpollution
     - camera.weather
     - camera.dom
     
@@ -55,3 +56,9 @@ space:
     - sensor.iss_lat
     - sensor.iss_lon
     - camera.iss
+    
+airpollution:
+  name: Luftverschmutzung
+  entities:
+    - sensor.luftdaten_sensor_pm10
+    - sensor.luftdaten_sensor_pm25

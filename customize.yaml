@@ -1,5 +1,5 @@
 climate.leq0845978:
-  friendly_name: "Heizung K\xFCche"
+  friendly_name: Heizung Küche
 climate.leq0846316:
   friendly_name: Heizung Wohnzimmer
 climate.leq0846600:
@@ -15,38 +15,38 @@ switch.bewegungsmelder_balkon:
 sensor.officepc:
   icon: mdi:lan
 sensor.dark_sky_cloud_coverage:
-  friendly_name: "Bew\xF6lkung"
-  emulated_hue: false
+  friendly_name: Bewölkung
+  emulated_hue_hidden: true
   hidden: false
   icon: mdi:weather-partlycloudy
 sensor.dark_sky_daily_max_precip_intensity:
   friendly_name: Niederschlag maximal
-  emulated_hue: false
+  emulated_hue_hidden: true
   hidden: false
   icon: mdi:thermometer
 sensor.dark_sky_humidity:
   friendly_name: Luftfeuchtigkeit
-  emulated_hue: false
+  emulated_hue_hidden: true
   hidden: false
   icon: mdi:water-percent
 sensor.dark_sky_minutely_summary:
   friendly_name: Aktuelles Wetter
-  emulated_hue: false
+  emulated_hue_hidden: true
   hidden: true
   icon: mdi:beach
 sensor.dark_sky_precip_intensity:
   friendly_name: Niederschlag
-  emulated_hue: false
+  emulated_hue_hidden: true
   hidden: false
   icon: mdi:weather-rainy
 sensor.dark_sky_temperature:
   friendly_name: Temperatur
-  emulated_hue: false
+  emulated_hue_hidden: true
   hidden: false
   icon: mdi:thermometer
 sensor.dark_sky_wind_speed:
   friendly_name: Windgeschwindigkeit
-  emulated_hue: false
+  emulated_hue_hidden: true
   hidden: false
   icon: mdi:weather-windy
 sensor.10000802dc1448:
@@ -61,3 +61,7 @@ sensor.leq0845978_battery:
   icon: mdi:battery
 sensor.dark_sky_ozone:
   friendly_name: Ozon
+sensor.10000802dc1448_temperature:
+  friendly_name: Pi Umgebungstemperatur
+group.arbeitszimmer:
+  order: 3
