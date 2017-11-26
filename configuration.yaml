@@ -145,7 +145,7 @@ notify:
     # gcm_sender_id: !secret gcm_sender_id
     
 emulated_hue:
-  host_ip: !secret IP_IP_rpi-server
+  host_ip: !secret IP_rpi-server
   off_maps_to_on_domains:
     - script
     - scene
