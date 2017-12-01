@@ -8,7 +8,7 @@ guest_mode:
   initial: off
   icon: mdi:account-multiple
 
-enalbe_speech_notifications:
+enable_speech_notifications:
   name: Sprachausgabe
   initial: on
   icon: mdi:speaker-wireless
