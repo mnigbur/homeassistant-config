@@ -74,7 +74,8 @@ camera: !include_dir_merge_list camera/
 group: !include_dir_merge_named group/
 input_boolean: !include input_boolean.yaml
 input_select: !include input_select.yaml
-#input_slider: !include input_slider.yaml
+input_number: !include input_number.yaml
+input_datetime: !include input_datetime.yaml
 light: !include lights.yaml
 mqtt: !include mqtt.yaml
 scene: !include_dir_merge_list scenes/

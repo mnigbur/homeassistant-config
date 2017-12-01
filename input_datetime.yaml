@@ -1,0 +1,24 @@
+morning_week:
+  name: Morgen unter der Woche
+  has_date: false
+  has_time: true
+  initial: '06:00'
+
+night_week:
+  name: Abend unter der Woche
+  has_date: false
+  has_time: true
+  initial: '23:00'
+
+morning_weekend:
+  name: Morgen am Wochenende
+  has_date: false
+  has_time: true
+  initial: '08:00'
+    
+night_weekend:
+  name: Abend am Wochenende
+  has_date: false
+  has_time: true
+  initial: '01:00'
+    
