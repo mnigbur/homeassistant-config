@@ -1,0 +1,29 @@
+automation:
+  name: Automation
+  view: yes
+  entities:
+    - group.automation_variables
+    - group.automation_overrides
+    
+automation_variables:
+  name: Variables
+  control: hidden
+  entities:
+    - input_datetime.morning_week
+    - input_datetime.night_week
+    - input_datetime.morning_weekend
+    - input_datetime.night_weekend
+    - input_number.heizung_kalt
+    - input_number.heizung_warm
+    - input_number.pir_timeout
+    - input_select.house_mode
+    - input_boolean.guest_mode
+    - input_boolean.vacation_mode
+    
+automation_overrides:
+  name: Automatisierungen aktiv
+  control: hidden
+  entities:
+    - input_boolean.enable_motion_detection
+    - input_boolean.enable_speech_notifications
+    - input_boolean.heating_auto
