@@ -28,26 +28,32 @@
       friendly_name: 'Ventil'
       value_template: '{{ states.climate.leq0845978.attributes.valve }}'
       entity_id: climate.leq0845978
+      unit_of_measurement: '%'
     leq0845978_battery:
       friendly_name: 'Batterie'
       value_template: '{{ states.climate.leq0845978.attributes.battery }}'
       entity_id: climate.leq0845978
+      unit_of_measurement: V
     leq0846316_valve:
       friendly_name: 'Ventil'
       value_template: '{{ states.climate.leq0846316.attributes.valve }}'
       entity_id: climate.leq0846316
+      unit_of_measurement: '%'
     leq0846316_battery:
       friendly_name: 'Batterie'
       value_template: '{{ states.climate.leq0846316.attributes.battery }}'
       entity_id: climate.leq0846316
+      unit_of_measurement: V
     leq0846600_valve:
       friendly_name: 'Ventil'
       value_template: '{{ states.climate.leq0846600.attributes.valve }}'
       entity_id: climate.leq0846600
+      unit_of_measurement: '%'
     leq0846600_battery:
       friendly_name: 'Batterie'
       value_template: '{{ states.climate.leq0846600.attributes.battery }}'
       entity_id: climate.leq0846600
+      unit_of_measurement: V
 
     battery_status:
       friendly_name: "Battery Status"
