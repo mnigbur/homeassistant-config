@@ -5,14 +5,14 @@ pir_timeout:
   max: 600
   step: 30
   
-heizung_kalt:
+heating_cold:
   name: Heizung kalt
   initial: 18
   min: 5
   max: 30
   step: 1
   
-heizung_warm:
+heating_warm:
   name: Heizung warm
   initial: 23
   min: 5
