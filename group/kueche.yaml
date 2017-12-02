@@ -1,4 +1,4 @@
-kueche:
+kueche_view:
   name: Küche
   view: yes
   entities:

@@ -56,7 +56,7 @@
       unit_of_measurement: V
 
     battery_status:
-      friendly_name: "Battery Status"
+      friendly_name: 'Battery Status'
       value_template: >-
         {%- set threshold = 25 -%}
         {%- set domains = ['light', 'switch', 'sensor', 'zwave', 'binary_sensor'] -%}

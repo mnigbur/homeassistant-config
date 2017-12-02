@@ -1,4 +1,4 @@
-automation:
+automation_view:
   name: Automation
   view: yes
   entities:
@@ -27,3 +27,4 @@ automation_overrides:
     - input_boolean.enable_motion_detection
     - input_boolean.enable_speech_notifications
     - input_boolean.heating_auto
+

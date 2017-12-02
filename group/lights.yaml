@@ -1,0 +1,19 @@
+lights_view:
+  name: Lichter
+  view: yes
+  icon: mdi:lightbulb-on
+  entities:
+    - group.lights
+
+lights:
+  name: Lichter
+  entities:
+    - light.arbeitszimmer
+    - switch.arbeitszimmer_stehlampe
+    - light.balkon
+    - light.kueche
+    - light.kuechenschrank
+    - light.wohnzimmer
+    - switch.wohnzimmer_couch
+    - switch.wohnzimmer_stehlampe
+    

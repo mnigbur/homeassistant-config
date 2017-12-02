@@ -63,5 +63,22 @@ sensor.dark_sky_ozone:
   friendly_name: Ozon
 sensor.10000802dc1448_temperature:
   friendly_name: Pi Umgebungstemperatur
-group.arbeitszimmer:
+
+group.home_view:
+  order: 1
+group.lights_view:
+  order: 2
+group.weather_view:
   order: 3
+group.wohnzimmer_view:
+  order: 4
+group.arbeitszimmer_view:
+  order: 5
+group.kueche_view:
+  order: 6
+group.balkon_view:
+  order: 7
+group.system_view:
+  order: 8
+group.automation_view:
+  order: 9

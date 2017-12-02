@@ -1,10 +1,11 @@
-wohnzimmer:
+wohnzimmer_view:
   name: Wohnzimmer
   view: yes
   entities:
     - group.wohnzimmer_lights
     - group.wohnzimmer_switches
     - group.wohnzimmer_env
+    - group.wohnzimmer_media
 
 wohnzimmer_lights:
   name: Licht
@@ -24,3 +25,9 @@ wohnzimmer_env:
     - climate.leq0846316
     - sensor.leq0846316_valve
     - sensor.leq0846316_battery
+    
+wohnzimmer_media:
+  name: Media Devices
+  entities:
+    - media_player.tv_wohnzimmer
+    - media_player.firetv

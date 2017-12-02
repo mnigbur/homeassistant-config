@@ -1,14 +1,24 @@
-wetter:
+weather_view:
   view: yes
   name: Wetter
+  icon: mdi:weather-partlycloudy
   entities:
-    - group.forecast
-    - group.space
-    - group.airpollution
+    - group.weather_forecast
+    - group.weather_space
+    - group.weather_airpollution
+    - group.weather_misc
     - camera.weather
     - camera.dom
+
+weather_misc:
+  name: Misc
+  entities:
+    - binary_sensor.daemmerung
+    - binary_sensor.mistwetter
+    - sensor.season
+    - sensor.moon
     
-forecast:
+weather_forecast:
   name: Wetter
   entities:
     - sun.sun
@@ -48,16 +58,17 @@ forecast:
     - sensor.dwdweatherwarnings_current_warning_level
     - sensor.dwdweatherwarnings_advance_warning_level
     
-space:
-  name: Space
+weather_space:
+  name: ISS
   entities:
     - sensor.iss_people_onboard
     - sensor.iss_rise
     - sensor.iss_lat
     - sensor.iss_lon
     - camera.iss
+    - binary_sensor.iss
     
-airpollution:
+weather_airpollution:
   name: Luftverschmutzung
   entities:
     - sensor.luftdaten_sensor_pm10

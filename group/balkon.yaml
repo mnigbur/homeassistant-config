@@ -1,4 +1,4 @@
-balkon:
+balkon_view:
   name: balkon
   view: yes
   entities:

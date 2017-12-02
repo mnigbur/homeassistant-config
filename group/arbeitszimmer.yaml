@@ -1,11 +1,10 @@
-arbeitszimmer:
+arbeitszimmer_view:
   name: Arbeitszimmer
   view: yes
   entities:
     - group.arbeitszimmer_lights
     - group.arbeitszimmer_switches
     - group.arbeitszimmer_env
-    - group.arbeitszimmer_pc
 
 arbeitszimmer_lights:
   name: Licht

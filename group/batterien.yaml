@@ -1,7 +1,0 @@
-batterie:
-  name: Batterie Status
-  view: false
-  entities:
-  - sensor.leq0845978_battery
-  - sensor.leq0846316_battery
-  - sensor.leq0846600_battery
