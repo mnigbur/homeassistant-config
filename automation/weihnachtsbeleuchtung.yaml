@@ -1,0 +1,16 @@
+- alias: Weihnachtsbeleuchtung automatisch an
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: "-00:45:00"
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.lights_christmas
+
+- alias: Weihnachtsbeleuchtung automatisch aus
+  trigger:
+    - platform: sun
+      event: sunrise
+  action:
+    service: homeassistant.turn_on
+    entity_id: group.lights_christmas

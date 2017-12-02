@@ -4,6 +4,7 @@ automation_view:
   entities:
     - group.automation_variables
     - group.automation_overrides
+    - group.all_automations
     
 automation_variables:
   name: Variables
