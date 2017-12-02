@@ -151,9 +151,9 @@ emulated_hue:
     - script
     - scene
   expose_by_default: true
-  exposed_domains:
-    - light
-    - switch
+  # exposed_domains:
+    # - light
+    # - switch
     
 calendar:
   - platform: todoist

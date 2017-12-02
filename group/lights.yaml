@@ -6,14 +6,21 @@ lights_view:
     - group.lights
 
 lights:
-  name: Lichter
+  name: Alle Lichter
   entities:
     - light.arbeitszimmer
     - switch.arbeitszimmer_stehlampe
     - light.balkon
+    - switch.balkon_weihnachtsbeleuchtung
     - light.kueche
     - light.kuechenschrank
     - light.wohnzimmer
-    - switch.wohnzimmer_couch
     - switch.wohnzimmer_stehlampe
+    - switch.wohnzimmer_weihnachtsbeleuchtung
+    
+lights_christmas:
+  name: Weihnachtsbeleuchtung
+  entities:
+    - switch.balkon_weihnachtsbeleuchtung
+    - switch.wohnzimmer_weihnachtsbeleuchtung
     
