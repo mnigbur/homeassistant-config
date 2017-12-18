@@ -107,7 +107,7 @@ media_player:
     arguments: '--alsa-audio-device=hw:0,0'
   
 homematic:
-  hosts:
+  interfaces:
     rf:
       ip: 127.0.0.1
       
