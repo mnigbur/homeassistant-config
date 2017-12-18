@@ -36,7 +36,7 @@
   
 - platform: limitlessled
   bridges:
-    - host: 192.168.178.37
+    - host: 192.168.178.104
       port: 5987
       groups:
       - number: 1
