@@ -11,6 +11,7 @@ wohnzimmer_lights:
   name: Licht
   entities:
     - light.wohnzimmer
+    - light.wohnzimmer_wuerfel
 
 wohnzimmer_switches:
   name: Schalter

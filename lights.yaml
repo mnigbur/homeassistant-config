@@ -43,3 +43,7 @@
         type: rgbw
         name: Balkon
         fade: on
+      - number: 2
+        type: rgbw
+        name: Wohnzimmer Wuerfel
+        fade: on

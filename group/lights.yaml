@@ -17,6 +17,7 @@ lights:
     - light.wohnzimmer
     - switch.wohnzimmer_stehlampe
     - switch.wohnzimmer_weihnachtsbeleuchtung
+    - light.wohnzimmer_wuerfel
     
 lights_christmas:
   name: Weihnachtsbeleuchtung
