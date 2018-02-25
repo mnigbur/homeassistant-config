@@ -6,10 +6,6 @@ homeassistant:
   unit_system: metric
   time_zone: Europe/Berlin
   customize: !include customize.yaml
-   
-
-# Show links to resources in log and frontend
-#introduction:
 
 # Enables the frontend
 frontend:
@@ -97,11 +93,12 @@ tts:
 media_player:
   - platform: cast
     host: !secret IP_chromcast
-  - platform: firetv
+  # fire-tv server currently requires python2.. waiting for a newer version
+  #- platform: firetv
   - platform: samsungtv
     name: TV Wohnzimmer
     host: !secret IP_firetv
-    mac: F4:7B:5E:A5:8A:39
+    mac: !secret MAC_firetv
   - platform: vlc
     name: speaker
     arguments: '--alsa-audio-device=hw:0,0'
@@ -109,7 +106,7 @@ media_player:
 homematic:
   interfaces:
     rf:
-      ip: 127.0.0.1
+      host: 127.0.0.1
       
 device_tracker:
   - platform: owntracks
@@ -121,12 +118,12 @@ device_tracker:
     qos: 0
     unit_of_measurement: "%"
     value_template: '{{ value_json.batt }}'
-  - platform: nmap_tracker
-    hosts: 192.168.178.0/24
-    home_interval: 3
-    track_new_devices: no
-    interval_seconds: 30
-    consider_home: 120
+#  - platform: nmap_tracker
+#    hosts: 192.168.178.0/24
+#    home_interval: 3
+#    track_new_devices: no
+#    interval_seconds: 30
+#    consider_home: 120
       
 telegram_bot:
   - platform: polling
@@ -164,3 +161,5 @@ calendar:
         due_date_days: 0
       - name: 'Due This Week'
         due_date_days: 7
+
+cloud:
