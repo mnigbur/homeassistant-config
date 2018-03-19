@@ -99,9 +99,9 @@ media_player:
     name: TV Wohnzimmer
     host: !secret IP_firetv
     mac: !secret MAC_firetv
-  - platform: vlc
-    name: speaker
-    arguments: '--alsa-audio-device=hw:0,0'
+  #- platform: vlc
+  #  name: speaker
+  #  arguments: '--alsa-audio-device=hw:0,0'
   
 homematic:
   interfaces:
