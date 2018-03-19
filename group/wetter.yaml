@@ -71,5 +71,7 @@ weather_space:
 weather_airpollution:
   name: Luftverschmutzung
   entities:
-    - sensor.luftdaten_sensor_pm10
-    - sensor.luftdaten_sensor_pm25
+    - sensor.luftdaten_pm10
+    - sensor.luftdaten_pm25
+    - sensor.luftdaten_humidity
+    - sensor.luftdaten_temperature
