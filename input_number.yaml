@@ -5,15 +5,15 @@ pir_timeout:
   max: 600
   step: 30
   
-heating_cold:
-  name: Heizung kalt
-  initial: 18
+heating_night:
+  name: Heizung Nachts
+  initial: 19
   min: 5
   max: 30
   step: 1
   
-heating_warm:
-  name: Heizung warm
+heating_day:
+  name: Heizung Tags
   initial: 23
   min: 5
   max: 30

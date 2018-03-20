@@ -14,8 +14,8 @@ automation_variables:
     - input_datetime.night_week
     - input_datetime.morning_weekend
     - input_datetime.night_weekend
-    - input_number.heating_cold
-    - input_number.heating_warm
+    - input_number.heating_night
+    - input_number.heating_day
     - input_number.pir_timeout
     - input_select.house_mode
     - input_boolean.guest_mode
