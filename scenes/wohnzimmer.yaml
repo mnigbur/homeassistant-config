@@ -1,16 +1,3 @@
-############
-# Arbeitszimmer #
-############
-
-- name: Arbeitszimmer Normal
-  entities:
-    light.arbeitzimmer:
-      state: on
-
-############
-# WOHNZIMMER #
-############
-
 - name: Wohnzimmer Aus
   entities:
     switch.wohnzimmer_stehlampe:
@@ -29,7 +16,7 @@
     light.wohnzimmer:
       state: on
       
-- name: Wohnzimmer Gemütlich
+- name: Wohnzimmer Gedimmt
   entities:
     switch.wohnzimmer_stehlampe:
       state: on

@@ -15,7 +15,7 @@ balkon_lights:
 balkon_switches:
   name: Schalter
   entities:
-    - switch.balkon_weihnachtsbeleuchtung
+    - switch.balkon
 balkon_env:
   name: Environment
   entities:

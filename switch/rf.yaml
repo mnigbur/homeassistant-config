@@ -7,13 +7,13 @@
       code_off: 1049940
       signal_repetitions: 30
       
-    Wohnzimmer Weihnachtsbeleuchtung:
+    Wohnzimmer Lichterkette:
       pulselength: 326
       code_on: 1053009
       code_off: 1053012
       signal_repetitions: 30
       
-    Arbeitszimmer Stehlampe:
+    Wohnzimmer Wandlampe:
       pulselength: 328
       code_on: 1053777
       code_off: 1053780

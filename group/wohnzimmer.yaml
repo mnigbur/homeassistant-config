@@ -6,6 +6,7 @@ wohnzimmer_view:
     - group.wohnzimmer_switches
     - group.wohnzimmer_env
     - group.wohnzimmer_media
+    - group.wohnzimmer_scenes
 
 wohnzimmer_lights:
   name: Licht
@@ -18,6 +19,7 @@ wohnzimmer_switches:
   entities:
     - switch.wohnzimmer_stehlampe
     - switch.wohnzimmer_couch
+    - switch.wohnzimmer_wandlampe
 
 wohnzimmer_env:
   name: Environment
@@ -32,3 +34,9 @@ wohnzimmer_media:
   entities:
     - media_player.tv_wohnzimmer
     - media_player.firetv
+    
+wohnzimmer_scenes:
+  name: Szenen
+  entities:
+    - scene.wohnzimmer_aus
+    - scene.wohnzimmer_gedimmt

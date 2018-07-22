@@ -11,17 +11,17 @@ lights:
     - light.arbeitszimmer
     - switch.arbeitszimmer_stehlampe
     - light.balkon
-    - switch.balkon_weihnachtsbeleuchtung
+    - switch.balkon
     - light.kueche
     - light.kuechenschrank
     - light.wohnzimmer
     - switch.wohnzimmer_stehlampe
-    - switch.wohnzimmer_weihnachtsbeleuchtung
+    - switch.wohnzimmer_lichterkette
     - light.wohnzimmer_wuerfel
     
-lights_christmas:
-  name: Weihnachtsbeleuchtung
+lights_evening:
+  name: Abendbeleuchtung
   entities:
-    - switch.balkon_weihnachtsbeleuchtung
-    - switch.wohnzimmer_weihnachtsbeleuchtung
+    - switch.balkon
+    - switch.wohnzimmer_lichterkette
     

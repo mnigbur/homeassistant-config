@@ -12,9 +12,6 @@ arbeitszimmer_lights:
     - light.arbeitszimmer
     
 arbeitszimmer_switches:
-  name: Schalter
-  entities:
-    - switch.arbeitszimmer_stehlampe
 
 arbeitszimmer_env:
   name: Environment
