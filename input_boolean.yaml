@@ -1,24 +1,19 @@
 vacation_mode:
   name: Urlaubs Modus
-  initial: off
   icon: mdi:airplane
   
 guest_mode:
   name: Gast Modus
-  initial: off
   icon: mdi:account-multiple
 
 enable_speech_notifications:
   name: Sprachausgabe
-  initial: on
   icon: mdi:speaker-wireless
 
 heating_auto:
   name: Heizung automatisch
-  initial: on
 
 enable_motion_detection:
   name: Bewegungsmelder aktiv
-  initial: on
 
  

@@ -1,20 +1,17 @@
 pir_timeout:
   name: PIR Ausschalt-Verzögerung
-  initial: 300
   min: 30
   max: 600
   step: 30
   
 heating_night:
   name: Heizung Nachts
-  initial: 19
   min: 5
   max: 30
   step: 1
   
 heating_day:
   name: Heizung Tags
-  initial: 23
   min: 5
   max: 30
   step: 1
