@@ -17,7 +17,7 @@ config:
 
 http:
   # Uncomment this to add a password (recommended!)
-  # api_password: PASSWORD
+  api_password: !secret api_password
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
   #ssl_certificate: /home/homeassistant/.homeassistant/certificate.pem
@@ -37,6 +37,8 @@ history:
 
 recorder:
   db_url: !secret mysql_connection
+  purge_interval: 1
+  purge_keep_days: 7
   exclude:
     domains:
       - automation
@@ -102,12 +104,12 @@ media_player:
   #- platform: vlc
   #  name: speaker
   #  arguments: '--alsa-audio-device=hw:0,0'
-  
+
 homematic:
   interfaces:
     rf:
       host: 127.0.0.1
-      
+
 device_tracker:
   - platform: owntracks
     max_gps_accuracy: 200
@@ -124,24 +126,24 @@ device_tracker:
 #    track_new_devices: no
 #    interval_seconds: 30
 #    consider_home: 120
-      
+
 telegram_bot:
   - platform: polling
     api_key: !secret telegram_api_key
     allowed_chat_ids:
       - !secret telegram_chat_id
-      
+
 notify:
   - name: telegram
     platform: telegram
     chat_id: !secret telegram_chat_id
-    
+
 # notify:
   # - name: browser
     # platform: html5
     # gcm_api_key: !secret gcm_api_key
     # gcm_sender_id: !secret gcm_sender_id
-    
+
 emulated_hue:
   host_ip: !secret IP_rpi-server
   off_maps_to_on_domains:
@@ -151,7 +153,7 @@ emulated_hue:
   # exposed_domains:
     # - light
     # - switch
-    
+
 # calendar:
   # - platform: todoist
     # token: !secret todoist_token
@@ -163,3 +165,11 @@ emulated_hue:
         # due_date_days: 7
 
 cloud:
+
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
