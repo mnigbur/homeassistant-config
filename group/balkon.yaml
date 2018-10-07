@@ -16,10 +16,12 @@ balkon_switches:
   name: Schalter
   entities:
     - switch.balkon
+
 balkon_env:
   name: Environment
   entities:
     - binary_sensor.bewegungsmelder_balkon
+    - sensor.feuchtigkeit_balkon
     
 balkon_scenes:
   name: Szenen

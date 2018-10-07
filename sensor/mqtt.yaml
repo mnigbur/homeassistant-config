@@ -12,3 +12,9 @@
   # name: Bewegungsmelder Wohnzimmer
   # state_topic: "stat/esp-wohnzimmer/PIR"
   # value_template: "{{ 'Motion' if value is equalto '1' else 'No Motion' }}"
+  
+- platform: mqtt
+  name: Feuchtigkeit Balkon
+  state_topic: "sensor/moisture"
+  qos: 0
+  #unit_of_measurement: "x"
