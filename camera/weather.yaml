@@ -1,9 +1,0 @@
-- platform: generic
-  name: Weather
-  still_image_url: https://www.yr.no/place/Germany/North_Rhine-Westphalia/Cologne/meteogram.svg
-  content_type: 'image/svg+xml'
-  
-# - platform: generic
-  # name: EU Weather
-  # still_image_url: http://api.sat24.com/animated/EU/visual/2/GMT%20Standard%20Time/9105947
-  # limit_refetch_to_url_change: true
