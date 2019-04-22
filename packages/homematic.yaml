@@ -1,0 +1,87 @@
+homematic:
+  local_ip: 192.168.178.11
+  local_port: 36845
+  interfaces:
+    rf:
+      host: 192.168.178.11
+      port: 2001
+      resolvenames: metadata
+      callback_ip: 192.168.178.11
+      callback_port: 36845
+
+sensor:
+  - platform: template
+    sensors:
+      leq0845978_valve:
+        friendly_name: 'Heizung Küche Ventil'
+        value_template: '{{ states.climate.leq0845978.attributes.valve }}'
+        entity_id: climate.leq0845978
+        unit_of_measurement: '%'
+      leq0845978_battery:
+        friendly_name: 'Heizung Küche Batterie'
+        value_template: '{{ states.climate.leq0845978.attributes.battery }}'
+        entity_id: climate.leq0845978
+        unit_of_measurement: V
+      leq0845978_current_temperature:
+        friendly_name: 'Heizung Küche Temperatur'
+        value_template: '{{ states.climate.leq0845978.attributes.current_temperature }}'
+        entity_id: climate.leq0845978
+        unit_of_measurement: '°C'
+
+      leq0846316_valve:
+        friendly_name: 'Heizung Wohnzimmer Ventil'
+        value_template: '{{ states.climate.leq0846316.attributes.valve }}'
+        entity_id: climate.leq0846316
+        unit_of_measurement: '%'
+      leq0846316_battery:
+        friendly_name: 'Heizung Wohnzimmer Batterie'
+        value_template: '{{ states.climate.leq0846316.attributes.battery }}'
+        entity_id: climate.leq0846316
+        unit_of_measurement: V
+      leq0846316_current_temperature:
+        friendly_name: 'Heizung Wohnzimmer Temperatur'
+        value_template: '{{ states.climate.leq0846316.attributes.current_temperature }}'
+        entity_id: climate.leq0846316
+        unit_of_measurement: '°C'
+
+      leq0846600_valve:
+        friendly_name: 'Heizung Arbeitszimmer Ventil'
+        value_template: '{{ states.climate.leq0846600.attributes.valve }}'
+        entity_id: climate.leq0846600
+        unit_of_measurement: '%'
+      leq0846600_battery:
+        friendly_name: 'Heizung Arbeitszimmer Batterie'
+        value_template: '{{ states.climate.leq0846600.attributes.battery }}'
+        entity_id: climate.leq0846600
+        unit_of_measurement: V
+      leq0846600_current_temperature:
+        friendly_name: 'Heizung Arbeitszimmer Temperatur'
+        value_template: '{{ states.climate.leq0846600.attributes.current_temperature }}'
+        entity_id: climate.leq0846600
+        unit_of_measurement: '°C'
+
+input_number:
+  heating_temp_on:
+    name: Heizung Temperatur an
+    min: 5
+    max: 30
+    step: 1
+
+  heating_temp_off:
+    name: Heizung Temperatur aus
+    min: 5
+    max: 30
+    step: 1
+
+input_boolean:
+  heating_temp_auto:
+    name: Heizung steuern?
+    icon: mdi:radiator
+
+group:
+  heating_automation:
+    name: Heizungsautomatisierung
+    entities:
+      - input_boolean.heating_temp_auto
+      - input_number.heating_temp_on
+      - input_number.heating_temp_off

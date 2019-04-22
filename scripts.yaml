@@ -1,0 +1,6 @@
+start_netflix:
+  sequence:
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.fire_tv
+      source: 'com.netflix.ninja'

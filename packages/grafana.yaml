@@ -1,0 +1,20 @@
+influxdb:
+  host: 192.168.178.11
+  include:
+    entities:
+       - sensor.wohnzimmer_temperatur
+       - sensor.wohnzimmer_helligkeit
+       - sensor.wohnzimmer_luftfeuchtigkeit
+
+camera:
+  - platform: generic
+    name: Grafana Helligkeit
+    still_image_url: 'http://192.168.178.11:3000/render/d-solo/fkbslGkZk/test?orgId=1&panelId=4&width=1000&height=500&from=now-24h&to=now'
+    username: !secret grafana_user
+    password: !secret grafana_pass
+
+  - platform: generic
+    name: Grafana Raumklima
+    still_image_url: 'http://192.168.178.11:3000/render/d-solo/fkbslGkZk/test?orgId=1&panelId=2&width=1000&height=500&from=now-24h&to=now'
+    username: !secret grafana_user
+    password: !secret grafana_pass

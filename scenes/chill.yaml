@@ -1,0 +1,14 @@
+name: chill
+entities:
+  light.deckenlampe:
+    state: on
+    brightness: 74
+    color_temp: 372
+  light.stehlampe:
+    state: on
+    brightness: 100
+    color_temp: 372
+  light.schrank:
+    state: on
+    brightness: 82
+    color_temp: 372

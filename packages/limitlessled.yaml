@@ -1,0 +1,14 @@
+light:
+  - platform: limitlessled
+    bridges:
+      - host: 192.168.178.104
+        port: 5987
+        groups:
+        - number: 1
+          type: rgbw
+          name: Schreibtisch
+          fade: on
+        - number: 2
+          type: rgbw
+          name: Wohnzimmer Wuerfel
+          fade: on

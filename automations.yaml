@@ -1,0 +1,37 @@
+- alias: Licht an (Auto)
+  trigger:
+    platform: mqtt
+    topic: tele/sonoff-arbeitszimmer/LWT
+    payload: Online
+  action:
+    service: light.turn_on
+    data:
+      brightness: 150
+      rgb_color:
+      - 255
+      - 207
+      - 120
+      entity_id:
+      - light.schrank
+      - light.stehlampe
+  id: c234b4bedf1442daa46b9ee75a5c07a5
+- alias: Licht aus (Auto)
+  trigger:
+    platform: mqtt
+    topic: tele/sonoff-arbeitszimmer/LWT
+    payload: Offline
+  action:
+    service: light.turn_off
+    data:
+      entity_id:
+      - light.schrank
+      - light.stehlampe
+  id: f802a39e0ee245049035ab30ea056977
+- id: '1545566046601'
+  alias: test
+  trigger:
+  - platform: webhook
+    webhook_id: light-sun-set
+  condition: []
+  action:
+  - service: light.turn_on

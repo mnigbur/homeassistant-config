@@ -1,0 +1,134 @@
+homeassistant:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: 100
+  unit_system: metric
+  time_zone: Europe/Berlin
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 192.168.178.0/24
+        - fd00::/8
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+  base_url: !secret hass_url
+  # no ssl here, were are behind nginx proxy
+  #ssl_certificate: /config/fullchain.pem
+  #ssl_key: /config/privkey.pem
+
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# Enables a map showing the location of tracked devices
+map:
+
+# Track the sun
+sun:
+
+# Sensors
+sensor:
+  # Weather prediction
+  - platform: yr
+  - platform: darksky
+    api_key: !secret darksky_api_key
+    forecast:
+      - 0
+      - 1
+      - 2
+    language: de
+    monitored_conditions:
+      - precip_intensity
+      - precip_intensity_max
+      - temperature
+      - wind_speed
+      - cloud_cover
+      - humidity
+      - minutely_summary
+      - pressure
+      - visibility
+      - ozone
+      - uv_index
+      - hourly_summary
+      - daily_summary
+      - dew_point
+    scan_interval:
+      minutes: 10
+
+# Text to speech
+tts:
+  - platform: google
+
+# Cloud
+cloud:
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include_dir_list scenes
+
+recorder:
+  db_url: !secret mysql_connection
+  purge_interval: 1
+  purge_keep_days: 365
+  exclude:
+    domains:
+      - group
+      - automation
+      - camera
+      - media_player
+      - scene
+      - script
+    entities:
+      - sun.sun
+
+logger:
+  default: warning
+  # logs:
+  #   pyhomematic: debug
+  #   homeassistant.components.homematic: debug
+
+media_player:
+  - platform: androidtv
+    name: Fire TV
+    host: 192.168.178.109
+    adb_server_ip: 127.0.0.1
+
+panel_iframe:
+  esphome:
+    title: ESP Home
+    icon: mdi:sitemap
+    url: http://192.168.178.11:6052
+
+

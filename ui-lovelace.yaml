@@ -1,0 +1,37 @@
+title: Home
+views:
+  - title: Arbeitszimmer
+    # the final path is /lovelace/living_room
+    id: office
+    cards:
+      - type: entities
+        name: Spotify
+        entities:
+          - media_player.spotify
+          - group.home_spotify_controls
+      - type: vertical-stack
+        cards:
+        - type: light
+          entity: light.arbeitszimmer
+          name: Alle Lichter
+        - type: entities
+          id: ef8d165f78ce4758967ab92e22c61f7e  # Automatically created id
+          title: Licht
+          show_header_toggle: true
+          entities:
+            - entity: light.deckenlampe
+            - entity: light.schrank
+            - entity: light.stehlampe
+            - entity: light.schreibtisch
+      - type: vertical-stack
+        cards:
+        - type: entities
+          id: 14984edc9d4c412fb83d1358be41e2aa  # Automatically created id
+          title: Heizung
+          entities:
+            - climate.leq0846600
+            - sensor.leq0846600_battery
+            - sensor.leq0846600_valve
+            - sensor.leq0846600_current_temperature
+        - type: thermostat
+          entity: climate.leq0846600
