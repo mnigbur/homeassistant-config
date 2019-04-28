@@ -1,0 +1,6 @@
+person:
+  - name: Markus
+    id: mnigbur
+    user_id: a3dd1ecc3864488fae860268d44a613b
+    device_trackers:
+      - device_tracker.031603d1430c3801

@@ -89,7 +89,8 @@ sensor:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 # Cloud
 cloud:
@@ -98,6 +99,7 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include_dir_list scenes
+notify: !include_dir_list notifiers
 
 recorder:
   db_url: !secret mysql_connection
